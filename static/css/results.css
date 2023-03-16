@@ -1,0 +1,32 @@
+*{
+    background-color: #a2a595;
+}
+
+table, th, td {
+    border: 1px solid #a9c0a6;
+    border-collapse: collapse;
+    text-align: center;
+  }
+th, td {
+    background-color: #ced2cc;
+  }
+
+#header th{
+    background-color: #1d3c45;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 18px;
+    color: white;
+}
+
+#rows td{
+    background-color: #fff1e1;
+    font-style: italic; 
+    font-size: 16px;
+    color: #201e20;
+}
+
+a:link {
+    color: #d2601a;
+    background-color: transparent;
+  }

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>SearchPage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <form class="search-bar" action="/search" method="POST" autocomplete="off">
+            <input type="text" placeholder="please enter a valid URL" name="content" maxlength="255"/>
+            <button type="submit"><img src="{{ url_for('static', filename='images/search.png') }}"></button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>ResultsPage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <table id="html_table">
+        <!-- HEADER ROW -->
+        <tr id='header'>
+            {% for col in header %}
+                <th> {{col}} </th>
+            {% endfor %}
+        </tr>
+        <!-- DATA ROWS -->
+        {% for row in rows %}
+        <tr id='rows'>
+            {% for col in row %}
+            
+            {% if "https://" in col %}
+                <td><a href={{ col }}>{{ col }} </a></td>
+            {% else %}
+                <td> {{ col }} </td>
+            {% endif %}
+               
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
