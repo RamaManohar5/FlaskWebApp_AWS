@@ -140,12 +140,14 @@ async def fetch_channel_data(channel_url):
 
 
     # writing the data to csv using csv object
-    csv_file_name = channel_url.split('/')[3]
-    csv_file = f"{os.getcwd()}/{csv_file_name}.csv"
+    folder_path = os.getcwd()
+    csv_file_name = channel_url.split('/')[3] + '.csv'
+    csv_file = f"{folder_path}/{csv_file_name}"
 
     #delete the residual csv_files
-    if csv_file:
-        os.remove(csv_file)
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.csv'):
+            os.remove(f"{folder_path}/{filename}")
 
     # headers for the csv sheet
     field_names = ["S.No", "video_url", "thumbnail_url", "title", "no_of_views", 'published_at']
